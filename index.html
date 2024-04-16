@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticação de Certificados - IDP Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #012d6c;
+            color: #000; /* Alterado para preto */
+        }
+        #container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 400px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #validMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        #resultado p {
+            color: red;
+            margin-top: 10px;
+        }
+        #codigosValidos {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Autenticação de Certificados - IDP Cursos</h1>
+    <form id="authForm">
+        <label for="codigo">Digite o código de autenticação:</label><br>
+        <input type="text" id="codigo" name="codigo" required><br>
+        <input type="submit" value="Verificar">
+    </form>
+    <div id="resultado"></div>
+    <div id="validMessage" style="display: none;">Certificado válido!</div>
+    <div id="codigosValidos">
+        <h2>Códigos Válidos:</h2>
+        <ul>
+            <li>IDP24001</li>
+            <li>IDP24002</li>
+            <li>IDP24003</li>
+            <li>IDP24004</li>
+            <li>IDP24005</li>
+            <li>IDP24006</li>
+            <li>IDP24007</li>
+            <li>IDP24008</li>
+            <li>IDP24009</li>
+            <li>IDP24010</li>
+            <li>IDP24011</li>
+            <li>IDP24012</li>
+            <li>IDP24013</li>
+            <li>IDP24014</li>
+            <li>IDP24015</li>
+            <li>IDP24016</li>
+            <li>IDP24017</li>
+            <li>IDP24018</li>
+            <li>IDP24019</li>
+            <li>IDP24020</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.getElementById('authForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var codigoDigitado = document.getElementById('codigo').value;
+        var codigosValidos = ["IDP24001", "IDP24002", "IDP24003", "IDP24004", "IDP24005", "IDP24006", "IDP24007", "IDP24008", "IDP24009", "IDP24010", "IDP24011", "IDP24012", "IDP24013", "IDP24014", "IDP24015", "IDP24016", "IDP24017", "IDP24018", "IDP24019", "IDP24020"];
+        var resultado = document.getElementById('resultado');
+        var validMessage = document.getElementById('validMessage');
+        
+        if (codigosValidos.includes(codigoDigitado)) {
+            resultado.innerHTML = "";
+            validMessage.style.display = 'block';
+        } else {
+            resultado.innerHTML = "<p>Código inválido!</p>";
+            validMessage.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
