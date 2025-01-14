@@ -11,14 +11,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #6d8a74;
+            background-color: #ff914c;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
         header {
-            background-color: #91ba92;
+            background-color: #ffffff;
             color: #ffffff;
             padding: 20px;
             text-align: center;
@@ -100,7 +100,7 @@
         }
 
         footer {
-            background-color: #5f7163;
+            background-color: #4990e2;
             color: #ffffff;
             padding: 10px;
             text-align: center;
@@ -167,14 +167,14 @@
 
 <div class="container">
     <div class="form-container">
-        <h2>Digite o código do certificado</h2>
+        <h2>VALIDAÇÃO DE CERTIFICADO</h2>
         <form id="form-codigo">
-            <input type="text" id="codigo" name="codigo" placeholder="Código do certificado" required>
+            <input type="text" id="codigo" name="codigo" placeholder="CPF DO ALUNO" required>
             <input type="submit" value="Validar">
         </form>
 
         <!-- Área para exibir o status de carregamento -->
-        <div id="loading" class="loading" style="display: none;">Carregando... Por favor, aguarde.</div>
+        <div id="loading" class="loading" style="display: none;">Consultando... Por favor, aguarde.</div>
 
         <!-- Área para mostrar a mensagem de certificado válido -->
         <div class="valid-message" id="valid-message" style="display: none;"></div>
@@ -190,7 +190,7 @@
         </div>
 
         <!-- Link para baixar o certificado em PDF -->
-        <a href="https://drive.google.com/file/d/1l5t8pvdpV-f2KC2jszPE5mVHYpqkuXwF/view?usp=sharing" class="download-btn" id="download-btn" style="display: none;" download>
+        <a href="https://drive.google.com/file/d/1GsZA8VHaOUuupWMDd5rWULvrjKblrViZ/view?usp=sharing" class="download-btn" id="download-btn" style="display: none;" download>
             Baixar Certificado em PDF
         </a>
     </div>
@@ -219,7 +219,7 @@
 
         // Simula um tempo de "carregamento" (por exemplo, 3 segundos)
         setTimeout(function() {
-            if (codigo === '2WCC26') {
+            if (codigo === '05274555390') {
                 // Esconde a mensagem de carregamento
                 loadingMessage.style.display = 'none';
 
