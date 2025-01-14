@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="Validação de Certificado - Seleto Digital EAD"> <!-- Novo título para compartilhamento -->
-    <title>Validação de Certificado - Seleto digital EAD Play</title> <!-- Título padrão da página -->
+    <title>Validação de Certificado - Seleto Digital EAD</title> <!-- Título padrão da página -->
     <style>
         /* Estilos gerais */
         body {
@@ -185,15 +185,25 @@
             <h3>Informações do Estudante:</h3>
             <p><strong>Nome:</strong> PAULO ERICKSON ROCHA DO LAGO SILVA</p>
             <p><strong>RG:</strong> 0295700020056</p>
-            <p><strong>Registro:</strong> O presente certificado foi registrado sob nº
-                2304425, no livro digital nº 01, desta Instituição de 
-                Ensino, FEDS – Fundação Educacional Seleto.</p>
+            <p><strong>Registro:</strong> O presente certificado foi registrado sob nº 2304425, no livro digital nº 01, desta Instituição de Ensino, FEDS – Fundação Educacional Seleto.</p>
+            <!-- Link de download do certificado -->
+            <a href="https://drive.google.com/file/d/1mr5IvVZm4pWBouxhhJfCxRxz25y6nWhx/view?usp=sharing" class="download-btn" id="download-btn" style="display: none;" download>
+                Baixar Certificado em PDF
+            </a>
         </div>
 
-        <!-- Link para baixar o certificado em PDF -->
-        <a href="https://drive.google.com/file/d/1mr5IvVZm4pWBouxhhJfCxRxz25y6nWhx/view?usp=sharing" class="download-btn" id="download-btn" style="display: none;" download>
-            Baixar Certificado em PDF
-        </a>
+        <!-- Informações do segundo aluno -->
+        <div class="info" id="info2">
+            <h3>Informações do Estudante:</h3>
+            <p><strong>Nome:</strong> LAIENE FERREIRA SANTOS</p>
+            <p><strong>RG:</strong> 045658672012-8</p>
+            <p><strong>CPF:</strong> 610.631.383-02</p>
+            <p><strong>Registro:</strong> O presente certificado foi registrado sob nº 2305253, no livro digital nº 01, desta Instituição de Ensino, FEDS – Fundação Educacional Seleto.</p>
+            <!-- Link de download do certificado -->
+            <a href="https://drive.google.com/file/d/1MXyd-qW3NuDXsHEHW21kkTf7r9qWzWC9/view?usp=sharing" class="download-btn" id="download-btn2" style="display: none;" download>
+                Baixar Certificado em PDF
+            </a>
+        </div>
     </div>
 </div>
 
@@ -214,47 +224,38 @@
 
         // Esconde qualquer informação ou mensagem anterior
         const infoDiv = document.getElementById('info');
+        const infoDiv2 = document.getElementById('info2');
         infoDiv.style.display = 'none';
+        infoDiv2.style.display = 'none';
         const validMessage = document.getElementById('valid-message');
         validMessage.style.display = 'none';
 
         // Simula um tempo de "carregamento" (por exemplo, 3 segundos)
         setTimeout(function() {
             if (codigo === '05274555390') {
-                // Esconde a mensagem de carregamento
+                // Exibe as informações do aluno 1
                 loadingMessage.style.display = 'none';
-
-                // Exibe a mensagem de sucesso
                 validMessage.textContent = 'Certificado válido!';
                 validMessage.style.display = 'block';
-                validMessage.style.color = 'green'; // Define a cor verde
-
-                // Exibe as informações com transição
-                infoDiv.classList.add('show'); // Adiciona a classe 'show' para ativar a animação
-                infoDiv.style.display = 'block'; // Torna a área de informações visível
-
-                // Exibe o botão de download do PDF
+                infoDiv.classList.add('show');
+                infoDiv.style.display = 'block';
                 const downloadBtn = document.getElementById('download-btn');
-                downloadBtn.style.display = 'block'; // Torna o botão de download visível
+                downloadBtn.style.display = 'block';
+            } else if (codigo === '61063138302') {
+                // Exibe as informações do aluno 2
+                loadingMessage.style.display = 'none';
+                validMessage.textContent = 'Certificado válido!';
+                validMessage.style.display = 'block';
+                infoDiv2.classList.add('show');
+                infoDiv2.style.display = 'block';
+                const downloadBtn2 = document.getElementById('download-btn2');
+                downloadBtn2.style.display = 'block';
             } else {
-                // Esconde a mensagem de carregamento
                 loadingMessage.style.display = 'none';
                 alert('Código inválido. Tente novamente.');
                 document.getElementById('codigo').value = ''; // Limpa o campo de código
             }
         }, 3000); // 3 segundos de "suspense" antes de exibir o resultado
-    });
-
-    // Monitorar rolagem da página
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        
-        // Verifica se a rolagem é maior que 50px
-        if (window.scrollY > 50) {
-            header.style.opacity = '0'; // Torna o cabeçalho invisível após 50px de rolagem
-        } else {
-            header.style.opacity = '1'; // Volta a visibilidade do cabeçalho no topo
-        }
     });
 </script>
 
